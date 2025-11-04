@@ -415,6 +415,30 @@
       <script src="https://unpkg.com/scrollreveal"></script>
 
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+      <script>
+  // Mobile navbar toggle
+  let menu = document.querySelector('#menu');
+  let navbar = document.querySelector('.navbar');
+
+  menu.onclick = () => {
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('nav-toggle');
+  };
+
+  // Close navbar when scrolling or clicking a link
+  window.onscroll = () => {
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('nav-toggle');
+  };
+
+  document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('fa-times');
+      navbar.classList.remove('nav-toggle');
+    });
+  });
+</script>
+
 
       <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
   
@@ -425,6 +449,7 @@
 
 
 </html>
+
 
 
 
